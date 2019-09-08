@@ -1,0 +1,4 @@
+.cache
+.tern-port
+dist
+node_modules/
