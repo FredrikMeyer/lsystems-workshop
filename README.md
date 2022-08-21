@@ -2,6 +2,10 @@
 
 ## Installation
 
+
+Todo leggg til parcel
+
+
 ```bash
 npm install && npm start
 ```
@@ -9,6 +13,8 @@ npm install && npm start
 This serves the page at `localhost:1234`.
 
 ## What are L systems?
+
+
 
 ### Rewriting rules
 
