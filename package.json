@@ -2,10 +2,9 @@
   "name": "l-systems",
   "version": "1.0.0",
   "description": "L systems",
-  "main": "index.js",
   "scripts": {
     "start": "parcel index.html",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "parcel build index.html --dist-dir ./docs"
   },
   "author": "Fredrik Meyer",
   "license": "ISC",
