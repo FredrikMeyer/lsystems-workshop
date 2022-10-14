@@ -1,30 +1,31 @@
 import p5 from "p5";
 import { LSystem, L } from "./lsystem";
 
-const Dragon = new LSystem(["F", "+", "-"], "F++F++F", { F: "F-F++F-F" });
-
-const Sierpinski = new LSystem(["L", "R", "+", "-"], "R", {
-  L: "R+L+R",
-  R: "L-R-L",
-});
-
-const ThreeA = new LSystem(["F", "[", "]", "+", "-"], "F", {
-  F: "F[+F]F[-F]F",
-});
-
-const ThreeB = new LSystem(["F", "[", "]", "+", "-"], "F", {
-  F: "FF-[-F+F+F]+[+F-F-F]",
-});
+const systemMap = {
+  Dragon: new LSystem(["F", "+", "-"], "F++F++F", { F: "F-F++F-F" }),
+  Sierpinski: new LSystem(["L", "R", "+", "-"], "R", {
+    L: "R+L+R",
+    R: "L-R-L",
+  }),
+  ThreeA: new LSystem(["F", "[", "]", "+", "-"], "F", {
+    F: "F[+F]F[-F]F",
+  }),
+  ThreeB: new LSystem(["F", "[", "]", "+", "-"], "F", {
+    F: "FF-[-F+F+F]+[+F-F-F]",
+  }),
+  L: L
+};
 
 const [w, h] = [window.innerWidth, window.innerHeight];
 
-let textX, textY, textD, textN, textA, textTheta;
+let textX, textY, textD, textN, textA, textTheta, textSelect;
 let sliderX: p5.Element,
   sliderY: p5.Element,
   sliderD: p5.Element,
   sliderN: p5.Element,
   sliderA: p5.Element,
-  sliderTheta: p5.Element;
+  sliderTheta: p5.Element,
+  selectWhich: p5.Element;
 
 class Turtle {
   x: number;
@@ -91,6 +92,10 @@ class Turtle {
   }
 }
 
+function onSelectChange(p: p5) {
+  p.draw();
+}
+
 export const sketch = (p: p5) => {
   p.setup = () => {
     p.createCanvas(w, h);
@@ -155,11 +160,23 @@ export const sketch = (p: p5) => {
     sliderTheta.style("width", "100px");
     // @ts-ignore
     sliderTheta.changed(p.draw);
+
+    textSelect = p.createSpan("select which one");
+    textSelect.position(20, 160);
+    textSelect.style("color", "white");
+
+    selectWhich = p.createSelect();
+    Object.keys(systemMap).forEach((ch) => {
+      // @ts-ignore
+      selectWhich.option(ch);
+    });
+    selectWhich.position(20, 180);
+    // @ts-ignore
+    selectWhich.changed(() => onSelectChange(p));
   };
 
   p.draw = () => {
     // Define render logic for your sketch here
-    console.log("drew");
     p.background(0);
 
     const x = sliderX.value();
@@ -168,6 +185,7 @@ export const sketch = (p: p5) => {
     const n = sliderN.value();
     const angle = sliderA.value();
     const theta = sliderTheta.value();
+    const system = systemMap[selectWhich.value() as keyof typeof systemMap];
 
     const turtle = new Turtle(
       x as number,
@@ -176,14 +194,15 @@ export const sketch = (p: p5) => {
       d as number,
       theta as number
     );
-    /* turtle.addAlphabetMap({
-     *     "R": "F",
-     *     "L": "F",
-     *     "+": "+",
-     *     "-":"-"
-     * })
-     */
-    turtle.consume(p, ThreeB.grow("", n as number));
+    // turtle.addAlphabetMap({
+    //   "R": "F",
+    //   "L": "F",
+    //   "+": "+",
+    //   "-":"-"
+    // })
+
+    console.log(system);
+    turtle.consume(p, system.grow("", n as number));
     console.log("got here");
     p.noLoop();
   };
