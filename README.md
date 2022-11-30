@@ -2,10 +2,6 @@
 
 ## Installation
 
-
-Todo leggg til parcel
-
-
 ```bash
 npm install && npm start
 ```

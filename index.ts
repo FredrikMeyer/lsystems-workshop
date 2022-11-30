@@ -203,7 +203,6 @@ export const sketch = (p: p5) => {
 
     console.log(system);
     turtle.consume(p, system.grow("", n as number));
-    console.log("got here");
     p.noLoop();
   };
 };
