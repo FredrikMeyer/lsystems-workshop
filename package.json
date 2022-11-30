@@ -4,7 +4,7 @@
   "description": "L systems",
   "scripts": {
     "start": "parcel index.html",
-    "build": "parcel build index.html --dist-dir ./docs --public-url https://blog.fredrikmeyer.net/lsystems-workshop/"
+    "build": "parcel build index.html --dist-dir ./docs --public-url https://fredrikmeyer.net/lsystems-workshop/"
   },
   "author": "Fredrik Meyer",
   "license": "ISC",
