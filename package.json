@@ -9,7 +9,7 @@
   "author": "Fredrik Meyer",
   "license": "ISC",
   "dependencies": {
-    "@types/p5": "^1.6.1",
+    "@types/p5": "^1.6.2",
     "p5": "^1.6.0",
     "typescript": "^5.0.4"
   },
