@@ -6,7 +6,7 @@ export class LSystem {
   constructor(
     alphabet: string[],
     axiom: string,
-    productions: Record<string, string>
+    productions: Record<string, string>,
   ) {
     this.alphabet = alphabet;
     this.axiom = axiom;

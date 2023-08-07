@@ -39,7 +39,7 @@ class Turtle {
     y: number,
     startAngle: number,
     d: number,
-    delta: number
+    delta: number,
   ) {
     this.x = x;
     this.y = y;
@@ -192,7 +192,7 @@ export const sketch = (p: p5) => {
       y as number,
       angle as number,
       d as number,
-      theta as number
+      theta as number,
     );
     // turtle.addAlphabetMap({
     //   "R": "F",
