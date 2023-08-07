@@ -13,7 +13,7 @@ const systemMap = {
   ThreeB: new LSystem(["F", "[", "]", "+", "-"], "F", {
     F: "FF-[-F+F+F]+[+F-F-F]",
   }),
-  L: L
+  L: L,
 };
 
 const [w, h] = [window.innerWidth, window.innerHeight];

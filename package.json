@@ -4,6 +4,8 @@
   "description": "L systems",
   "scripts": {
     "start": "parcel index.html",
+    "prettier": "prettier --check .",
+    "prettier-write": "prettier --write .",
     "build": "parcel build index.html --dist-dir ./docs --public-url https://fredrikmeyer.net/lsystems-workshop/"
   },
   "author": "Fredrik Meyer",

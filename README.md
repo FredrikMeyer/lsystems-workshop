@@ -10,8 +10,6 @@ This serves the page at `localhost:1234`.
 
 ## What are L systems?
 
-
-
 ### Rewriting rules
 
 TODO: Explain
@@ -19,7 +17,6 @@ TODO: Explain
 ### Interpret as drawing operations
 
 TODO: Explain
-
 
 ## Links
 
