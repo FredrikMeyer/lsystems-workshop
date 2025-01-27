@@ -12,7 +12,7 @@
   "license": "ISC",
   "dependencies": {
     "@types/p5": "^1.7.6",
-    "p5": "^1.11.2",
+    "p5": "^1.11.3",
     "typescript": "^5.7.2"
   },
   "devDependencies": {
