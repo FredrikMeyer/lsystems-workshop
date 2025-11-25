@@ -11,7 +11,7 @@
   "author": "Fredrik Meyer",
   "license": "ISC",
   "dependencies": {
-    "@types/p5": "^1.7.6",
+    "@types/p5": "^1.7.7",
     "p5": "^2.1.1",
     "typescript": "^5.9.3"
   },
