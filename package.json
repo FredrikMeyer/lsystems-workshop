@@ -13,7 +13,7 @@
   "dependencies": {
     "@types/p5": "^1.7.7",
     "p5": "^2.2.3",
-    "typescript": "^6.0.2"
+    "typescript": "^6.0.3"
   },
   "devDependencies": {
     "parcel": "^2.16.4",
